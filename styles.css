@@ -201,3 +201,4 @@ footer a:hover { color: var(--text); }
 
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: 12px; top: 12px; background: var(--accent); color: #000; padding: 8px 12px; border-radius: 8px; z-index: 99; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
