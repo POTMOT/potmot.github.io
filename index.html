@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POTAPP — независимая студия игр</title>
+  <meta name="description" content="POTAPP — независимая студия игр. Космический Странник, Cook it! и новые проекты: где играть, новости и обновления.">
+  <meta property="og:title" content="POTAPP — независимая студия игр">
+  <meta property="og:description" content="Наши игры, площадки, новости и обновления.">
+  <meta property="og:image" content="img/space-stranger/icon.jpg">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#games">К играм</a>
+<div class="sky" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./">POT<span>APP</span></a>
+    <nav class="nav">
+      <a href="#games">Игры</a>
+      <a href="#news">Новости</a>
+      <a href="#where" class="hide-sm">Где играть</a>
+      <a href="#about">О студии</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ================= ГЛАВНЫЙ ЭКРАН ================= -->
+  <div class="wrap hero">
+    <div class="eyebrow">Независимая студия игр</div>
+    <h1>Делаем игры,<br>в которые хочется вернуться</h1>
+    <p class="lead">POTAPP — небольшая независимая студия. Создаём космические стратегии, казуальные игры и экспериментальные проекты для браузера и Android.</p>
+    <div class="btns">
+      <a class="btn" href="#games">Наши игры</a>
+      <a class="btn ghost" href="#news">Что нового</a>
+    </div>
+  </div>
+
+  <!-- ================= ИГРЫ =================
+       Чтобы добавить игру: скопируй блок <article class="game">…</article> целиком
+       и поменяй картинку, название, жанр, описание и ссылки. -->
+  <section id="games">
+    <div class="wrap">
+      <h2 class="sec-title">Игры</h2>
+      <p class="sec-sub">Во что можно поиграть уже сейчас и что готовится к выходу.</p>
+
+      <div class="games">
+
+        <article class="game">
+          <div class="game-head">
+            <img class="game-icon" src="img/space-stranger/icon.jpg" alt="Иконка игры Космический Странник" width="84" height="84">
+            <div>
+              <h3>Космический Странник</h3>
+              <div class="genre">Космическая экономическая стратегия</div>
+            </div>
+          </div>
+          <p>Начните с одного шахтёрского корабля у Гефеста и постройте торговую империю: добывайте руду, торгуйте на живом рынке, расширяйте флот и раскрывайте тайны звёздной системы.</p>
+          <div><span class="badge soon">Скоро в RuStore</span></div>
+          <div class="btns">
+            <a class="btn" href="games/space-stranger/">Подробнее</a>
+            <!-- Когда игра выйдет: замени на <a class="btn ghost" href="ССЫЛКА_НА_RUSTORE">RuStore</a> -->
+            <span class="btn disabled">RuStore — скоро</span>
+          </div>
+        </article>
+
+        <article class="game">
+          <div class="game-head">
+            <!-- Положи иконку игры в img/cook-it/icon.jpg — до этого будет показана заглушка -->
+            <img class="game-icon" src="img/cook-it/icon.jpg" alt="Иконка игры Cook it!" width="84" height="84"
+                 onerror="this.outerHTML='&lt;div class=&quot;game-icon fallback&quot; aria-hidden=&quot;true&quot;&gt;C!&lt;/div&gt;'">
+            <div>
+              <h3>Cook it!</h3>
+              <div class="genre">Казуальная игра</div>
+            </div>
+          </div>
+          <p>Наша опубликованная игра в Яндекс Играх. Играйте прямо в браузере — на компьютере и телефоне, без установки.</p>
+          <div><span class="badge">Яндекс Игры</span></div>
+          <div class="btns">
+            <!-- Замени ссылку на прямую страницу игры в Яндекс Играх -->
+            <a class="btn" href="https://yandex.ru/games/developer/64730" target="_blank" rel="noopener">Играть</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= НОВОСТИ =================
+       Новые записи добавляй СВЕРХУ: скопируй блок <article class="post">…</article>. -->
+  <section id="news">
+    <div class="wrap">
+      <h2 class="sec-title">Новости</h2>
+      <p class="sec-sub">Релизы, обновления и планы студии.</p>
+
+      <div class="news">
+        <article class="post">
+          <time datetime="2026-10-19">19.10.2026</time>
+          <div>
+            <h3>Космический Странник летит на Android</h3>
+            <p>Игра отправлена на модерацию в RuStore. Внутри — обучение с начальником станции Центавр, управление для сенсорного экрана, русский и английский язык. Ссылку опубликуем сразу после выхода.</p>
+          </div>
+        </article>
+
+        <article class="post">
+          <time datetime="2026-10-19">19.10.2026</time>
+          <div>
+            <h3>У POTAPP появился сайт</h3>
+            <p>Здесь будут собраны все наши игры, ссылки на площадки, новости и истории обновлений.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ГДЕ ИГРАТЬ ================= -->
+  <section id="where">
+    <div class="wrap">
+      <h2 class="sec-title">Где играть</h2>
+      <p class="sec-sub">Наши страницы разработчика на игровых площадках.</p>
+
+      <div class="platforms">
+        <a class="platform" href="https://yandex.ru/games/developer/64730" target="_blank" rel="noopener">
+          <span><b>Яндекс Игры</b><small>Играть в браузере</small></span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <!-- Когда появится страница разработчика в RuStore: замени span на <a class="platform" href="ССЫЛКА" …> -->
+        <span class="platform" style="opacity:.7">
+          <span><b>RuStore</b><small>Android — скоро</small></span>
+          <span class="badge soon">скоро</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= О СТУДИИ ================= -->
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2 class="sec-title">О студии</h2>
+        <p>POTAPP — независимый разработчик игр из России. Выпускаем игры с 2023 года: сначала в Яндекс Играх, теперь и на Android.</p>
+        <p>Мы любим игры, в которых важна стратегия и есть место для открытий, и развиваем их вместе с игроками — по отзывам и пожеланиям.</p>
+        <p>Есть идея, вопрос или предложение о сотрудничестве? Пишите: <a href="mailto:potmot2407@yandex.ru">potmot2407@yandex.ru</a></p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>2023</b><span>год основания</span></div>
+        <div class="fact"><b>2</b><span>площадки</span></div>
+        <div class="fact"><b>RU · EN</b><span>языки игр</span></div>
+        <div class="fact"><b>0 ₽</b><span>за вход в игры</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 POTAPP</span>
+    <span>
+      <a href="privacy/space-stranger/">Политика конфиденциальности — Космический Странник</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:potmot2407@yandex.ru">potmot2407@yandex.ru</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>
