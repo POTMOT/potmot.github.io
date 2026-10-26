@@ -1,0 +1,308 @@
+<title>Космогольф — конфиденциальность</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: один столбец документа ~68 знаков, шапка-«бортовой журнал», переключатель RU/EN якорями */
+  :root {
+    --bg: #f5f6fa;
+    --surface: #ffffff;
+    --fg: #161a2b;
+    --muted: #5a6078;
+    --line: #dfe2ec;
+    --accent: #2f5bd3;
+    --accent-soft: #e6ecfb;
+    --display: "Unbounded", "Golos Text", system-ui, sans-serif;
+    --body: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b0e1a; --surface: #121729; --fg: #e7eaf5; --muted: #9aa1bd;
+      --line: #252c45; --accent: #7fa2ff; --accent-soft: #1a2342; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b0e1a; --surface: #121729; --fg: #e7eaf5; --muted: #9aa1bd;
+    --line: #252c45; --accent: #7fa2ff; --accent-soft: #1a2342; color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 40px 64px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+
+  header { display: flex; flex-direction: column; gap: 14px; }
+  .studio { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 5vw, 38px); line-height: 1.15; margin: 0; text-wrap: balance; }
+  .lead { color: var(--muted); margin: 0; max-width: 62ch; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--muted); }
+  .meta b { color: var(--fg); font-weight: 500; }
+
+  .lang { display: flex; gap: 8px; }
+  .lang a {
+    font-family: var(--mono); font-size: 13px; text-decoration: none; color: var(--accent);
+    border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; background: var(--surface);
+  }
+  .lang a:focus-visible, .copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .summary {
+    background: var(--accent-soft); border-radius: 10px; padding: 18px 20px;
+    display: grid; gap: 8px;
+  }
+  .summary h2 { margin: 0; font-size: 15px; font-family: var(--body); font-weight: 600; letter-spacing: 0.02em; }
+  .summary ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+
+  article { display: flex; flex-direction: column; gap: 28px; }
+  section { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  h2 { font-family: var(--display); font-weight: 500; font-size: 19px; margin: 0; text-wrap: balance; }
+  h3 { font-size: 16px; font-weight: 600; margin: 4px 0 0; }
+  p { margin: 0; max-width: 68ch; }
+  ul { margin: 0; padding-left: 22px; max-width: 66ch; display: grid; gap: 6px; }
+  a { color: var(--accent); overflow-wrap: anywhere; }
+
+  .divider { border: 0; border-top: 1px solid var(--line); margin: 8px 0; }
+
+  .contact {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
+  }
+  .contact .label { font-size: 14px; color: var(--muted); }
+  .email { font-family: var(--mono); font-size: 15px; user-select: all; overflow-wrap: anywhere; }
+  .copy {
+    font: 500 13px var(--body); color: var(--accent); background: transparent;
+    border: 1px solid var(--line); border-radius: 6px; padding: 5px 12px; cursor: pointer;
+  }
+  .copy:hover { background: var(--accent-soft); }
+
+  footer { font-size: 13px; color: var(--muted); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .copy { transition: background 0.15s ease; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="studio">POTAPP · Android · RuStore</div>
+    <h1>Политика конфиденциальности игры «Космогольф»</h1>
+    <p class="lead">Как игра обращается с данными: что хранится на телефоне, что получает рекламная сеть и как отказаться от персональной рекламы.</p>
+    <div class="meta">
+      <span>Действует с <b>26 октября 2026 г.</b></span>
+      <span>Приложение <b>com.potapp.cosmogolf</b></span>
+    </div>
+    <nav class="lang" aria-label="Язык">
+      <a href="#ru">Русский</a>
+      <a href="#en">English</a>
+    </nav>
+  </header>
+
+  <div class="summary" role="note">
+    <h2>Коротко</h2>
+    <ul>
+      <li>Регистрации и входа нет. Мы не спрашиваем имя, телефон, почту и не получаем их.</li>
+      <li>Прогресс игры хранится только на вашем телефоне.</li>
+      <li>Реклама Рекламной сети Яндекса использует данные устройства. Персональную рекламу можно отключить в настройках игры.</li>
+      <li>Покупок за реальные деньги в игре нет.</li>
+    </ul>
+  </div>
+
+  <article id="ru" lang="ru">
+    <section>
+      <h2>1. Кто отвечает за данные</h2>
+      <p>Игру «Космогольф» (CosmoGolf) разрабатывает и публикует независимый разработчик под брендом POTAPP — физическое лицо, зарегистрированное в RuStore как разработчик. Ниже он называется «разработчик» или «мы».</p>
+      <p>Политика описывает обработку данных в версии игры для Android, распространяемой через RuStore.</p>
+    </section>
+
+    <section>
+      <h2>2. Какие данные мы обрабатываем сами</h2>
+      <p>Разработчик не собирает и не хранит на своих серверах персональные данные игроков. У игры нет сервера, аккаунтов и регистрации.</p>
+      <ul>
+        <li><b>Прогресс и настройки</b> (открытые уровни и мячи, лучшие результаты, громкость) сохраняются только в памяти вашего устройства и никуда не передаются.</li>
+        <li><b>Выбор о рекламе</b> (согласие на персональную рекламу и возраст) тоже хранится на устройстве и передаётся только рекламному SDK, чтобы он показывал рекламу с учётом вашего выбора.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Реклама и сторонние сервисы</h2>
+      <p>Игра бесплатная и показывает рекламу: межстраничную между уровнями. Для этого в игру встроен <b>Yandex Mobile Ads SDK</b> (ООО «Яндекс»), вместе с ним работает служба аналитики рекламы <b>AppMetrica</b>.</p>
+      <p>Эти сервисы могут получать с устройства:</p>
+      <ul>
+        <li>рекламный идентификатор устройства (Android Advertising ID);</li>
+        <li>технические данные: модель устройства, версию Android, язык, тип сети, оператора связи;</li>
+        <li>IP-адрес и определённое по нему примерное местоположение (страна, город);</li>
+        <li>данные о показах рекламы и взаимодействии с ней (показ, нажатие, досмотр).</li>
+      </ul>
+      <p>Данные нужны, чтобы подобрать и показать рекламу, посчитать показы и защититься от мошенничества. Обработку этих данных ведёт Яндекс по своим правилам:</p>
+      <ul>
+        <li><a href="https://yandex.ru/legal/confidential/" rel="noopener">Политика конфиденциальности Яндекса</a></li>
+        <li><a href="https://yandex.ru/legal/mobileads_sdk_agreement/" rel="noopener">Условия использования Yandex Mobile Ads SDK</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Согласие и как от него отказаться</h2>
+      <p>При первом запуске игра спрашивает ваш возраст и согласие на персональную рекламу. От ответа зависит только вид рекламы, игра работает одинаково.</p>
+      <ul>
+        <li><b>Согласны:</b> реклама может подбираться по вашим интересам.</li>
+        <li><b>Отказались:</b> реклама остаётся, но будет общей, без персонализации.</li>
+        <li><b>Младше 13 лет:</b> персональная реклама не показывается, сбор данных для неё отключён.</li>
+      </ul>
+      <p>Изменить выбор можно в любой момент: <b>Настройки игры → Конфиденциальность → Изменить выбор</b>. Также можно сбросить или удалить рекламный идентификатор в настройках Android (раздел «Google» или «Конфиденциальность» → «Реклама», название зависит от телефона).</p>
+    </section>
+
+    <section>
+      <h2>5. Дети</h2>
+      <p>Игра не предназначена специально для детей младше 13 лет и не собирает их персональные данные намеренно. Если игрок указал возраст младше 13 лет, персональная реклама отключается.</p>
+    </section>
+
+    <section>
+      <h2>6. Хранение и удаление</h2>
+      <ul>
+        <li>Прогресс хранится на устройстве, пока установлена игра. Удалить его можно, очистив данные приложения в настройках Android или удалив игру.</li>
+        <li>Данные, полученные рекламными сервисами, хранятся Яндексом в сроки, указанные в его политике.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Ваши права</h2>
+      <p>Вы можете отозвать согласие на персональную рекламу, узнать, какие данные обрабатываются, и попросить их удалить. По данным, которые обрабатывает Яндекс, обращайтесь также в Яндекс по ссылкам из раздела 3.</p>
+    </section>
+
+    <section>
+      <h2>8. Изменения политики</h2>
+      <p>Если в игре появятся новые сервисы или изменится обработка данных, мы обновим эту страницу и дату вверху. Продолжая играть после изменений, вы соглашаетесь с новой редакцией.</p>
+    </section>
+
+    <section>
+      <h2>9. Контакты</h2>
+      <p>Вопросы о данных и этой политике присылайте на почту разработчика:</p>
+      <div class="contact">
+        <span class="label">Почта</span>
+        <span class="email" id="email-ru">potmot2407@yandex.ru</span>
+        <button class="copy" type="button" data-target="email-ru" id="copy-ru">Скопировать</button>
+      </div>
+    </section>
+  </article>
+
+  <hr class="divider">
+
+  <article id="en" lang="en">
+    <section>
+      <h2>Privacy Policy — CosmoGolf</h2>
+      <p>Effective October 26, 2026. App <b>com.potapp.cosmogolf</b>.</p>
+      <ul>
+        <li>No registration or sign-in. We never ask for or receive your name, phone number or email.</li>
+        <li>Your game progress is stored only on your phone.</li>
+        <li>Ads from the Yandex Advertising Network use device data. You can turn off personalized ads in the game settings.</li>
+        <li>There are no real-money purchases in the game.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>1. Who is responsible for the data</h2>
+      <p>CosmoGolf («Космогольф») is developed and published by an independent developer under the POTAPP brand, an individual registered as a developer in RuStore. Below referred to as “the developer” or “we”.</p>
+      <p>This policy covers data processing in the Android version of the game distributed via RuStore.</p>
+    </section>
+
+    <section>
+      <h2>2. Data we process ourselves</h2>
+      <p>The developer does not collect or store players’ personal data on any server. The game has no server, no accounts and no registration.</p>
+      <ul>
+        <li><b>Progress and settings</b> (unlocked levels and balls, best scores, volume) are saved only in your device’s storage and are not sent anywhere.</li>
+        <li><b>Your ad choice</b> (consent to personalized ads and age) is also stored on the device and is passed only to the ad SDK so that ads respect your choice.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Advertising and third-party services</h2>
+      <p>The game is free and shows ads: interstitial ads between levels. For this the game includes the <b>Yandex Mobile Ads SDK</b> (Yandex LLC) together with the <b>AppMetrica</b> ad analytics service.</p>
+      <p>These services may receive from the device:</p>
+      <ul>
+        <li>the device advertising identifier (Android Advertising ID);</li>
+        <li>technical data: device model, Android version, language, network type, mobile carrier;</li>
+        <li>IP address and the approximate location derived from it (country, city);</li>
+        <li>data about ad impressions and interactions (view, click, completion).</li>
+      </ul>
+      <p>This data is used to select and show ads, count impressions and prevent fraud. It is processed by Yandex under its own terms:</p>
+      <ul>
+        <li><a href="https://yandex.com/legal/confidential/" rel="noopener">Yandex Privacy Policy</a></li>
+        <li><a href="https://yandex.ru/legal/mobileads_sdk_agreement/" rel="noopener">Yandex Mobile Ads SDK Terms of Use</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Consent and how to opt out</h2>
+      <p>On first launch the game asks for your age and consent to personalized ads. Your answer only affects the type of ads; the game works the same either way.</p>
+      <ul>
+        <li><b>Agreed:</b> ads may be tailored to your interests.</li>
+        <li><b>Declined:</b> ads are still shown but are generic, not personalized.</li>
+        <li><b>Under 13:</b> personalized ads are not shown and data collection for them is turned off.</li>
+      </ul>
+      <p>You can change your choice at any time: <b>Game settings → Privacy → Change choice</b>. You can also reset or delete your advertising ID in Android settings (“Google” or “Privacy” → “Ads”, depending on the phone).</p>
+    </section>
+
+    <section>
+      <h2>5. Children</h2>
+      <p>The game is not specifically directed at children under 13 and does not knowingly collect their personal data. If a player indicates an age under 13, personalized ads are turned off.</p>
+    </section>
+
+    <section>
+      <h2>6. Storage and deletion</h2>
+      <ul>
+        <li>Progress is stored on the device while the game is installed. You can delete it by clearing the app data in Android settings or by uninstalling the game.</li>
+        <li>Data received by the advertising services is retained by Yandex for the periods stated in its policy.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Your rights</h2>
+      <p>You can withdraw consent to personalized ads, ask what data is processed and request its deletion. For data processed by Yandex, you may also contact Yandex via the links in section 3.</p>
+    </section>
+
+    <section>
+      <h2>8. Changes to this policy</h2>
+      <p>If new services are added to the game or data processing changes, we will update this page and the date at the top. By continuing to play after changes, you accept the updated version.</p>
+    </section>
+
+    <section>
+      <h2>9. Contact</h2>
+      <p>Send questions about data and this policy to the developer’s email:</p>
+      <div class="contact">
+        <span class="label">Email</span>
+        <span class="email" id="email-en">potmot2407@yandex.ru</span>
+        <button class="copy" type="button" data-target="email-en" id="copy-en">Copy</button>
+      </div>
+    </section>
+  </article>
+
+  <footer>© 2026 POTAPP</footer>
+</div>
+
+<script>
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.target);
+      var text = el.textContent.trim();
+      var done = btn.lang === 'en' || btn.id === 'copy-en' ? 'Copied' : 'Скопировано';
+      var reset = btn.textContent;
+      function selectText() {
+        try {
+          var r = document.createRange(); r.selectNodeContents(el);
+          var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        } catch (e) {}
+      }
+      try {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = done;
+          setTimeout(function () { btn.textContent = reset; }, 1600);
+        }, selectText);
+      } catch (e) { selectText(); }
+    });
+  });
+</script>
