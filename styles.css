@@ -125,6 +125,7 @@ section { padding: 56px 0; }
 }
 .game:hover { border-color: rgba(124, 140, 255, .45); transform: translateY(-2px); }
 .game-head { display: flex; gap: 16px; align-items: center; }
+.game-cover { width: 100%; aspect-ratio: 1.85; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); }
 .game-icon {
   width: 84px; height: 84px; border-radius: 20px; flex: none; object-fit: cover;
   background: linear-gradient(135deg, #2b3170, #12172e);
