@@ -208,3 +208,5 @@ footer a:hover { color: var(--text); }
 
 .shots.portrait { grid-auto-columns: min(66%, 290px); }
 .shots.portrait img { aspect-ratio: auto; height: auto; }
+
+.shots.landscape img { height: auto; aspect-ratio: 16 / 9; object-fit: contain; align-self: start; }
